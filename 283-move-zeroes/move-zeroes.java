@@ -1,19 +1,19 @@
 class Solution {
-    public void swap(int x, int y, int[] arr) {
-        int temp = arr[x];
-        arr[x] = arr[y];
-        arr[y] = temp;
+    public void swap(int[] nums, int pos1, int pos2){
+        int eleToSwap = nums[pos1];
+        nums[pos1] = nums[pos2];
+        nums[pos2] = eleToSwap;
     }
 
-    public void moveZeroes(int[] nums) {
-        int n = nums.length;
-        int pt = 0;
 
-        for(int i=0;i<n;i++){
+    public void moveZeroes(int[] nums) {
+        
+        int temp = 0;  
+        for(int i=0;i<nums.length;i++){
             if(nums[i]!=0){
-                swap(i, pt, nums);
-                pt++;
+                swap(nums, i, temp);
+                temp++;
             }
-        }   
+        }
     }
 }
